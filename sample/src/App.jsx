@@ -2,8 +2,15 @@ import React from 'react'
 import Navbar from './components/Navbar';
 
 const App = () => {
-  const Appname = "JEY";
-  return (
+  const data1 = [
+   {Appname : "React1",
+    Appdata : "ReactData1"
+   },
+   {Appname : "React2",
+    Appdata : "ReactData2"
+   }];
+
+  return ( 
     <>
   {/* <div className='flex justify-center items-center p-2 gap-2 bg-slate-400'>
   <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
@@ -16,8 +23,8 @@ const App = () => {
         Badge
       </span>
 </div> */}
-    <div className='w-screen h-full flex flex-col items-center justify-center'>
-      <Navbar appname ={Appname} />
+    <div className='w-screen h-full flex flex-row items-center justify-center'>
+      <Navbar data = {data1} />
     </div>
   
     <div className='h-screen w-screen flex justify-center items-center bg-blue-300 ' >
