@@ -1,5 +1,5 @@
-import React from 'react'
-import { CircleUser } from 'lucide-react';
+import React, { useState } from 'react'
+import { CircleUser, CircleX } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -17,43 +17,70 @@ const Navbar = () => {
      path:"/contact"
     }]
 
+    const[userdata, setuserdata] = useState({
+       email: '',
+       password: ''
+    })
+
+    const handleChange = (e) => {
+      setuserdata({ ...userdata, [e.target.id]: e.target.value})
+    }
+
+    const handleLogin = (e) => {
+      e.preventDefault();
+      console.log(userdata);
+      console.log("using state");
+    }
+  const [visible, setvisible] = useState(false);
   return (
     <>
+
 <div className="h-[4rem] w-full flex justify-center items-center rounded-md bg-blue-200 border border-zinc-500">
     <div className="h-full w-[90%] flex flex-row items-center">
         <div className='w-[50%] h-full flex justify-start items-center font-semibold text-xl'><h2>JEYAKUMAR S</h2></div>
-        <div className='w-[70%] h-full flex justify-end items-center'>
-            <ul className='h-full w-fit list-none flex  items-center font-semibold gap-16'>
+        <div className='w-[45%] h-full flex justify-end items-center'>
+            <ul className='h-full w-full list-none flex  items-center font-semibold gap-10 justify-end'>
                {navdata.map((data, index) => (
-                <NavLink  key={index} to={data.path}><li className='text-xl font-semibold '>{data.title}</li></NavLink> ))}
+                <NavLink  key={index} to={data.path} className='h-[60%] w-[15%] flex items-center justify-center'><li className='text-xl font-semibold'>{data.title}</li></NavLink> ))}
                 
                 {/* <li className='text-xl font-semibold px-3'>Profile</li>
                 <li className='text-xl font-semibold px-3'>Projects</li>
                 <li className='text-xl font-semibold px-3'>Contact</li> */}
-           <li className='w-[30%] h-full flex justify-end items-center gap-3'><CircleUser size={35}/> </li>
+          <div className='w-[10%] h-full flex justify-end items-center'><li><CircleUser onClick={() => setvisible(true)} size={35}/> </li> </div>
             </ul>
         </div>
     </div>
 </div>
-    </>
+{
+  visible && (
+    <>
+                        <div className="h-screen w-screen absolute top-0 left-0 bg-black/20 flex justify-center items-center z-50">
+                            <div className=" h-[40%] w-[30%] bg-red z-50 flex flex-col  bg-white  shadow-lg ">
+                                <div className="w-full h-[15%] flex flex-row justify-start px-10 items-center border-2 text-white bg-purple-500 text-xl font-bold ">
+                                    <div className="w-1/2">
+                                        Login
+                                    </div>
+                                    <div className="w-1/2 flex justify-end">
+                                        <CircleX onClick={() => setvisible(!visible)} />
+                                    </div>
+                                </div>
+                                <div className="w-full h-[85%] flex flex-row justify-center items-center">
+                                    <form className="w-[80%] h-[80%] flex flex-col justify-center items-center gap-4" onSubmit={handleLogin}>
+                                        <input type="email" name="" id="email" placeholder="email" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} />
+                                        <input type="password" name="" id="password" placeholder="password" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} />
+                                        <button type="submit" className="bg-green-500 p-3 text-white w-full rounded-sm text-lg font-bold">   Login</button>
+                                    </form>
+                                </div>
+                                <div className="w-full h-[15%] flex flex-row justify-center items-center">
+                                    <button onClick={() => setvisible(!visible)} className="bg-red-500 p-3 text-white w-full h-full rounded-sm text-lg font-bold"> Cancel </button>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+            }
+        </>
   )
 }
+
 export default Navbar
-    
-    // <div className='bg-slate-300 rounded-sm h-[4rem] w-full shadow-xl bg-opacity-60 flex justify-around items-center sticky'>
-    //       <div className='h-full w-[95%] flex justify-center items-center'>
-    //         <div className='flex h-full w-full justify-start items-center '><h1 className='font-bold'><Link to='/home'>HANS ROHIT Y</Link></h1></div>
-    //        <div className='flex justify-end items-center h-full w-[50%]'>
-    //         <ul className='h-full w-full list-none flex flex-row justify-center gap-1 items-center font-semibold'>
-    //         {navdata.map((data,index)=>(
-    //           <Link key={index} to={data.path} className='h-[100%] w-[40%]'><li className='border-1  justify-center flex items-center h-full w-full hover:bg-slate-800 hover:bg-opacity-30 hover:text-white'>{data.title}</li></Link>
-    //         ))}
-    //             {/* <li className='border-1 justify-center flex items-center h-[100%] w-[40%] hover:bg-slate-800 hover:text-white hover:bg-opacity-30'><Link to='/project'>Project</Link></li>
-    //             <li className='border-1 justify-center flex items-center h-[100%] w-[40%] hover:bg-slate-800 hover:text-white hover:bg-opacity-30'><Link to='/contact'>Contact</Link></li> */}
-    //         <div className=' h-[100%] w-[18%] border-1 justify-center items-center flex'>
-    //             <Link to='/home'><li className='border-2 border-black rounded-full h-[32px] w-[32px] flex justify-start items-center'><CircleUser size={32} /></li></Link>
-    //             </div>
-    //         </ul>
-    //         </div>
-    //    </div> 
-    //  </div>
