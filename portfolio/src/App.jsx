@@ -1,10 +1,20 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Project from './pages/Project'
+import Contact from './pages/Contact'
+import Profile from './pages/Profile'
 
 const App = () => {
   return (
     <>
-    <Navbar/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Profile />} />
+        <Route path="/projects" element={<Project />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
