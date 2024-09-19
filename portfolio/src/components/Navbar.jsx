@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { CircleUser, CircleX } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import { useRef } from 'react';
 
 const Navbar = () => {
   
@@ -16,20 +17,26 @@ const Navbar = () => {
      title:"Contact",
      path:"/contact"
     }]
+//now using useRef
+    const emailref = useRef(null)
+    const passwordref = useRef(null)
 
-    const[userdata, setuserdata] = useState({
-       email: '',
-       password: ''
-    })
 
-    const handleChange = (e) => {
-      setuserdata({ ...userdata, [e.target.id]: e.target.value})
-    }
+// commented lines are get input using only state
+    // const[userdata, setuserdata] = useState({
+    //    email: '',
+    //    password: ''
+    // })
+
+    // const handleChange = (e) => {
+    //   setuserdata({ ...userdata, [e.target.id]: e.target.value})
+    // }
 
     const handleLogin = (e) => {
       e.preventDefault();
-      console.log(userdata);
-      console.log("using state");
+    //   console.log(userdata);
+    //   console.log("using state");
+         console.log(emailref.current.value, passwordref.current.value)  
     }
   const [visible, setvisible] = useState(false);
   return (
@@ -66,8 +73,11 @@ const Navbar = () => {
                                 </div>
                                 <div className="w-full h-[85%] flex flex-row justify-center items-center">
                                     <form className="w-[80%] h-[80%] flex flex-col justify-center items-center gap-4" onSubmit={handleLogin}>
-                                        <input type="email" name="" id="email" placeholder="email" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} />
-                                        <input type="password" name="" id="password" placeholder="password" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} />
+                                        {/* <input type="email" name="" id="email" placeholder="email" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} />
+                                        <input type="password" name="" id="password" placeholder="password" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} /> */}
+                                        <input type="email" ref={emailref} name="" id="email" placeholder="email" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required/>
+                                        <input type="password" ref={passwordref} name="" id="password" placeholder="password" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required />
+                                        
                                         <button type="submit" className="bg-green-500 p-3 text-white w-full rounded-sm text-lg font-bold">   Login</button>
                                     </form>
                                 </div>
