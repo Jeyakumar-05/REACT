@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { CircleUser, CircleX } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useRef } from 'react';
+import '../assets/css/style.css'
 
 const Navbar = () => {
   
@@ -42,13 +43,13 @@ const Navbar = () => {
   return (
     <>
 
-<div className="h-[4rem] w-full flex justify-center items-center rounded-md bg-blue-200 border border-zinc-500">
+<div className="h-[4rem] w-full flex justify-center items-center rounded-md bg-white border border-zinc-500">
     <div className="h-full w-[90%] flex flex-row items-center">
-        <div className='w-[50%] h-full flex justify-start items-center font-semibold text-xl'><h2>JEYAKUMAR S</h2></div>
+        <div className='w-[50%] h-full flex justify-start items-center font-semibold pinktext text-2xl'><h2>JEYAKUMAR S</h2></div>
         <div className='w-[45%] h-full flex justify-end items-center'>
-            <ul className='h-full w-full list-none flex  items-center font-semibold gap-10 justify-end'>
+            <ul className='h-full w-full list-none flex  items-center gap-10 justify-end'>
                {navdata.map((data, index) => (
-                <NavLink  key={index} to={data.path} className='h-[60%] w-[15%] flex items-center justify-center'><li className='text-xl font-semibold'>{data.title}</li></NavLink> ))}
+                <NavLink  key={index} to={data.path} className='h-[60%] w-[15%] flex items-center justify-center hover:opacity-60'><li className='text-xl navtext font-semibold'>{data.title}</li></NavLink> ))}
                 
                 {/* <li className='text-xl font-semibold px-3'>Profile</li>
                 <li className='text-xl font-semibold px-3'>Projects</li>
