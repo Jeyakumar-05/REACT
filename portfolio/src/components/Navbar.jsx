@@ -82,7 +82,7 @@ const Navbar = () => {
                                         {/* <input type="email" name="" id="email" placeholder="email" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} />
                                         <input type="password" name="" id="password" placeholder="password" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-purple-500" required onChange={handleChange} /> */}
                                         <input type="text" ref={nameref} name="" id="name" placeholder="Name" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-gray-500" required/>          
-                                        <button type="submit" className="bg-amber-400 p-2  text-white w-full rounded-sm text-lg font-bold"> Update Name</button>
+                                        <button type="submit" className="active p-2  text-white w-full rounded-sm text-lg font-bold"> Update Name</button>
                                     </form>
                                 </div>
                                 <div className="w-full h-[18%] flex flex-row  justify-center items-end">
