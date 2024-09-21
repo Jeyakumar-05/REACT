@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar';
+import { Toaster, toast } from 'sonner'
 
 const App = () => {
   const data1 = [
@@ -35,7 +36,8 @@ const App = () => {
         <input type="email" name="" id="" placeholder="Email" className='p-3 rounded-sm bg-[#f8f8f8] w-full font-bold outline-none focus:border-b-2 hover:border-blue-300' />
         <input type="number" name="" id="" placeholder="Age" className='p-3 rounded-sm bg-[#f8f8f8] w-full font-bold outline-none focus:border-b-2 hover:border-blue-300'/>
         <input type="password" name="" id="" placeholder="Password" className='p-3 rounded-sm bg-[#f8f8f8] w-full font-bold outline-none focus:border-b-2 hover:border-blue-300'/>
-        <button type="submit" className='w-full p-3  rounded-md outline-none font-bold text-white bg-blue-300 '>Login</button> 
+        <Toaster />
+        <button type="submit"  onClick={() => toast.success('login',{duration:1000})} className='w-full p-3  rounded-md outline-none font-bold text-white bg-blue-300 '>Login</button> 
 
         </form>   
         </div>
