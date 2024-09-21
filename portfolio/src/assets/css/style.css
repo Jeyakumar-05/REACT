@@ -16,6 +16,16 @@ ul {
     gap: 20px; /* add space between list items */
   }
   
+  .pfbg{ 
+    background-color: #F2E9EB; /* PROFILE BG */
+  }
+  .navtext{
+    color: #31383F;   /* text in nav */
+  } 
+  .pinktext{
+    color:#DD8EA4;   /* pink color */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
 
   li {
     font-size: 16px;
@@ -36,6 +46,7 @@ ul {
   }
 
 .active{
-  background-color: rgb(185, 185, 243);
+  /* background-color: rgb(185, 185, 243); */
+  background-color: #e2d199;
   border-radius: 5px;
 }
