@@ -39,7 +39,7 @@ ul {
   }
   
   @media (max-width: 480px) {
-    .nav-link {
+    .nav-link{
       font-size: 14px;
       padding: 6px 10px;
     }
@@ -50,3 +50,5 @@ ul {
   background-color: #e2d199;
   border-radius: 5px;
 }
+
+/* profile media query */
