@@ -48,7 +48,7 @@ const Navbar = () => {
   const [visible, setvisible] = useState(false);
   return (
     <>
-<div className="h-[4rem] w-full flex justify-center items-center rounded-md bg-white border border-zinc-500">
+<div className="h-[4rem] w-full flex justify-center items-center rounded-md bg-white border border-gray-400">
     <div className="h-full w-[90%] flex flex-row items-center">
         <div className='w-[50%] h-full flex justify-start items-center font-semibold pinktext text-2xl'><h2>{name ? name:"JEYAKUMAR S"}</h2></div>
         <div className='w-[45%] h-full flex justify-end items-center'>
@@ -59,7 +59,7 @@ const Navbar = () => {
                 {/* <li className='text-xl font-semibold px-3'>Profile</li>
                 <li className='text-xl font-semibold px-3'>Projects</li>
                 <li className='text-xl font-semibold px-3'>Contact</li> */}
-          <div className='w-[10%] h-full flex justify-end items-center'><li><CircleUser onClick={() => setvisible(true)} size={35}/> </li> </div>
+          <div className='w-[10%] h-full flex justify-end items-center navtext'><li><CircleUser onClick={() => setvisible(true)} size={35}/> </li> </div>
             </ul>
         </div>
     </div>
@@ -68,13 +68,13 @@ const Navbar = () => {
   visible && (
     <>
                         <div className="h-screen w-screen absolute top-0 left-0 bg-black/20 flex justify-center items-center z-50">
-                            <div className=" h-[35%] w-[30%] bg-red z-50 flex flex-col  bg-white shadow-lg ">
-                                <div className="w-full h-[15%] flex flex-row justify-start px-10 items-center border-2 rounded-sm text-gray-600 text-xl font-bold ">
+                            <div className=" h-[35%] w-[30%] bg-red z-50 flex flex-col  bg-white shadow-lg  ">
+                                <div className="w-full h-[18%] flex flex-row justify-start px-10 items-center border-2 rounded-sm text-gray-600 text-xl font-bold ">
                                     <div className="w-1/2">
                                         Profile
                                     </div>
-                                    <div className="w-1/2 flex justify-end">
-                                        <CircleX onClick={() => setvisible(!visible)} />
+                                    <div className="w-1/2 flex justify-end ">
+                                        <CircleX  onClick={() => setvisible(!visible)} />
                                     </div>
                                 </div>
                                 <div className="w-full h-[68%] flex flex-row justify-center items-center">

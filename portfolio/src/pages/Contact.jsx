@@ -1,38 +1,45 @@
-import React, { useState } from 'react'
+import React from "react";
+import { Linkedin, Github, Instagram, Mail } from "lucide-react";
+import '../assets/css/style.css'
 
 const Contact = () => {
   return (
-  <>
-  <div>
-    Contact
-  </div>
-  </>
-  )
-}
-export default Contact
+    <>
+      <div className="w-full h-screen flex flex-col justify-center items-center pfbg ">
+        <h2 className="text-3xl font-bold mb-6 text-center navtext">Get in Touch</h2>
+        <div className="w-[90%] max-w-4xl h-1/2 flex flex-col md:flex-row gap-10 justify-around items-center">
+          <div className="flex flex-col items-center">
+            <Linkedin
+              size={50}
+              className="text-blue-700 hover:text-blue-500 transition duration-300"
+            />
+            <p className="mt-2 text-lg font-semibold">LinkedIn</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <Instagram
+              size={50}
+              className="text-pink-600 hover:text-pink-400 transition duration-300"
+            />
+            <p className="mt-2 text-lg font-semibold">Instagram</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <Github
+              size={50}
+              className="text-gray-800 hover:text-gray-600 transition duration-300"
+            />
+            <p className="mt-2 text-lg font-semibold">GitHub</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <Mail
+              size={50}
+              className="text-yellow-600 hover:text-yellow-400 transition duration-300"
+            />
+            <p className="mt-2 text-lg font-semibold">Email</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-
-// const [visible,setvisible] =useState(false)
-//     {
-//       visible &&(
-//         <>
-//     <div className="h-screen w-screen absolute top-0 left-0 bg-black/20 flex justify-center items-center z-50">
-//     <div className="h-[40%] w-[30%] bg-red z-50 flex flex-col bg-white">
-//       <div className="w-full h-[20%] flex flex-row justify-center items-center border-2">
-//         Delete?
-//       </div>
-//     <div className="w-full h-[60%] flex flex-row justify-center items-center">
-//       Are you sure?
-//     </div>
-//     <div className="w-full h-[20%] flex justify-center items-center">
-//     <button onClick={()=> setvisible(!visible)} className="bg-red-500 p-3 text-white w-1/2 h-full rounded-sm ">No</button>
-//     <button onClick={()=> setvisible(!visible)} className="bg-green-500 p-3 text-white w-1/2 h-full rounded-sm">Yes</button>
-//     </div>
-//     </div>
-//     </div>
-//     </>
-//   )
-// }
-// <div className="w-full h-[10%] flex justify-center items-center -z-10 ">
-// <button  onClick={()=> setvisible(true)} className="bg-red-300 p-3 text-white w-1/2 h-full rounded-sm ">Delete</button>
-// </div>
+export default Contact;
