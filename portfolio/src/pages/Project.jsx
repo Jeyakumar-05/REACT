@@ -1,6 +1,8 @@
 import React from 'react'
 import '../assets/css/card.css'
-import Photo from '../assets/img/pooldead.jpeg'
+import Photo3 from '../assets/img/docters.jpg'
+import Photo2 from '../assets/img/bank.webp'
+import Photo1 from '../assets/img/pixelimg.jpg'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,21 +10,21 @@ import "slick-carousel/slick/slick-theme.css";
 const data = [
   {
     name:"BankingManagementSystem",
-    img: Photo,
+    img: Photo3,
     about : "BankingManagementSystem is software that manages banking operations like account creation, transactions, and loans, enhancing efficiency and customer experience through automation and secure data handling.",
-    source : ""
+    source : "https://github.com/Jeyakumar-05/BankingManagementSystem_ConsoleProject"
   },
   {
     name:"DetectPixlatedImage and CorrectIt",
-    img: Photo,
+    img: Photo1,
     about : "DetectPixelatedImage identifies images with blocky features and blur images due to low resolution, while CorrectIt restores these images, enhancing clarity and detail using advanced algorithms.",
-    source : ""
+    source : "https://github.com/Jeyakumar-05/DetectPixelImgAndCorrect_INTEL"
   },
   {
     name:"DoctersPortal",
-    img: Photo,
-    about : "DoctorsPortal is a web platform that enables communication and management between healthcare providers and patients, allowing for appointment scheduling and access to medical records.",
-    source : ""
+    img: Photo2,
+    about : "DoctorsPortal is a web platform that enables communication and management between healthcare providers and patients,  allowing for appointment scheduling and access to medical records.",
+    source : "https://github.com/Jeyakumar-05/DoctorsPortal_Website"
     }
 ]
 
@@ -65,20 +67,20 @@ const Project = () => {
   return (
     <>
       <div className='w-3/4 h-[80vh] m-auto'> 
-        <div className='mt-20'>
+        <div className='mt-20 mb-20'>
           <Slider {...settings}>
             {data.map((d,id) => (
-              <div key={id} className='bg-white h-[450px] textcolor rounded-xl'>
-                <div className='rounded-t-xl flex justify-center items-center'>
-                  <img src={d.img} alt="" className=' rounded-t-xl h-full w-full'/>
+              <div key={id} className='bg-white h-[450px] textcolor rounded-xl flex justify-center hover:scale-105'>
+                <div className='rounded-t-xl flex justify-center items-center h-[45%] '>
+                  <img src={d.img} alt="gitsource" className='rounded-t-xl h-full w-full'/>
                 </div>
 
                 <div className='flex flex-col justify-center items-center gap-4 p-4'>
                   <p className='text-xl font-semibold'>{d.name}</p>
                   <p>{d.about}</p>
                 </div>
-                <div className='flex items-center justify-center'>
-                  <div className='btnbg text-white text-lg px-6 py-1 rounded-xl'><a href={d.source}>Source</a></div>
+                <div className='flex items-end justify-center'>
+                  <div className='btnbg text-white text-lg px-6 py-1 rounded-xl '><a href={d.source} target="_blank">Source</a></div>
                 </div>
               </div>
             ))}
